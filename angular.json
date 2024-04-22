@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -26,7 +29,11 @@
               "src/favicon.ico",
               "src/assets"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["node_modules"]
+            },
             "styles": [
+
               "src/styles.css"
             ],
             "scripts": []
@@ -68,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "pj-pbd-app:build:production"
+              "buildTarget": "pj-pbd-app:build:production"
             },
             "development": {
-              "browserTarget": "pj-pbd-app:build:development"
+              "buildTarget": "pj-pbd-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "pj-pbd-app:build"
+            "buildTarget": "pj-pbd-app:build"
           }
         },
         "test": {
@@ -94,6 +101,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -101,6 +109,5 @@
         }
       }
     }
-  },
-  "defaultProject": "pj-pbd-app"
+  }
 }

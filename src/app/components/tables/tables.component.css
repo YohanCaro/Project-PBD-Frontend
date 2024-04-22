@@ -1,0 +1,29 @@
+table {
+  min-width: 870px;
+  max-width: 1000px;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+button {
+  margin-left: -10%;
+  border: 1;
+  border-radius: 3px;
+}
+
+mat-grid-list {
+  position: relative;
+  width: 75%;
+  max-width: 800px;
+  min-width: 600px;
+  margin-top: 20px;
+  margin-left: 3px;
+}
+
+mat-grid-list button {
+  margin-top: -10px;
+  border-color: #eff4fa;
+}
