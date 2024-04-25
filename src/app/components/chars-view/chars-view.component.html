@@ -1,0 +1,431 @@
+<mat-tab-group>
+
+  <mat-tab label="First">
+
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>{{queries[0].title}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+        <div class="data_table">
+          <table mat-table [dataSource]="queries[0].datas" color="primary">
+            <ng-container [matColumnDef]="col" *ngFor="let col of queries[0].columns">
+              <th mat-header-cell *matHeaderCellDef>{{col}}</th>
+              <td mat-cell *matCellDef="let element;">{{element[col]}}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="queries[0].columns"></tr>
+            <tr mat-row *matRowDef="let row; columns: queries[0].columns;"></tr>
+
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">Datos sin seleccionar </td>
+            </tr>
+          </table>
+        </div>
+
+        <div style="width: 90%;">
+          <canvas
+            baseChart
+            [data]="queries[0].cd"
+            [options]="barChartOptions"
+            [type]="barChartType"
+          >
+          </canvas>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </mat-tab>
+
+  <mat-tab label="Second">
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{queries[1].title}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+        <div class="data_table">
+          <table mat-table [dataSource]="queries[1].datas" color="primary">
+            <ng-container [matColumnDef]="col" *ngFor="let col of queries[1].columns">
+              <th mat-header-cell *matHeaderCellDef>{{col}}</th>
+              <td mat-cell *matCellDef="let element;">{{element[col]}}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="queries[1].columns"></tr>
+            <tr mat-row *matRowDef="let row; columns: queries[1].columns;"></tr>
+
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">Datos sin seleccionar </td>
+            </tr>
+          </table>
+        </div>
+
+        <div style="width: 50%;">
+          <canvas
+          baseChart
+          [data]="queries[1].cd"
+          [type]="pieChartType"
+          [options]="pieChartOptions"
+        >
+        </canvas>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </mat-tab>
+
+  <mat-tab label="Third">
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{queries[2].title}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+        <div class="data_table">
+          <table mat-table [dataSource]="queries[2].datas" color="primary">
+            <ng-container [matColumnDef]="col" *ngFor="let col of queries[2].columns">
+              <th mat-header-cell *matHeaderCellDef>{{col}}</th>
+              <td mat-cell *matCellDef="let element;">{{element[col]}}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="queries[2].columns"></tr>
+            <tr mat-row *matRowDef="let row; columns: queries[2].columns;"></tr>
+
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">Datos sin seleccionar </td>
+            </tr>
+          </table>
+        </div>
+
+        <div style="width: 80%;">
+          <canvas
+          baseChart
+          [data]="queries[2].cd"
+          [options]="barChartOptions2"
+          [type]="barChartType"
+          >
+        </canvas>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </mat-tab>
+
+  <mat-tab label="Fourth">
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{queries[3].title}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+        <div class="data_table">
+          <table mat-table [dataSource]="queries[3].datas" color="primary">
+            <ng-container [matColumnDef]="col" *ngFor="let col of queries[3].columns">
+              <th mat-header-cell *matHeaderCellDef>{{col}}</th>
+              <td mat-cell *matCellDef="let element;">{{element[col]}}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="queries[3].columns"></tr>
+            <tr mat-row *matRowDef="let row; columns: queries[3].columns;"></tr>
+
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">Datos sin seleccionar </td>
+            </tr>
+          </table>
+        </div>
+
+        <div style="width: 80%;">
+          <canvas
+          baseChart
+          [data]="queries[3].cd"
+          [options]="barChartOptions"
+          [type]="barChartType"
+          >
+        </canvas>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </mat-tab>
+
+  <mat-tab label="Fifth">
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{queries[4].title}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+        <div class="data_table">
+          <table mat-table [dataSource]="queries[4].datas" color="primary">
+            <ng-container [matColumnDef]="col" *ngFor="let col of queries[4].columns">
+              <th mat-header-cell *matHeaderCellDef>{{col}}</th>
+              <td mat-cell *matCellDef="let element;">{{element[col]}}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="queries[4].columns"></tr>
+            <tr mat-row *matRowDef="let row; columns: queries[4].columns;"></tr>
+
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">Datos sin seleccionar </td>
+            </tr>
+          </table>
+        </div>
+
+        <div style="width: 80%;">
+          <canvas
+          baseChart
+          [data]="queries[4].cd"
+          [options]="barChartOptions"
+          [type]="barChartType"
+          >
+        </canvas>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </mat-tab>
+
+  <mat-tab label="Sixth">
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{queries[5].title}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+        <div class="data_table">
+          <table mat-table [dataSource]="queries[5].datas" color="primary">
+            <ng-container [matColumnDef]="col" *ngFor="let col of queries[5].columns">
+              <th mat-header-cell *matHeaderCellDef>{{col}}</th>
+              <td mat-cell *matCellDef="let element;">{{element[col]}}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="queries[5].columns"></tr>
+            <tr mat-row *matRowDef="let row; columns: queries[5].columns;"></tr>
+
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">Datos sin seleccionar </td>
+            </tr>
+          </table>
+        </div>
+
+        <div style="width: 80%;">
+          <canvas
+            baseChart
+            [data]="queries[5].cd"
+            [options]="barChartOptions"
+            [type]="barChartType"
+          >
+          </canvas>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </mat-tab>
+
+  <mat-tab label="Seventh">
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{queries[6].title}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+        <div class="data_table">
+          <table mat-table [dataSource]="queries[6].datas" color="primary">
+            <ng-container [matColumnDef]="col" *ngFor="let col of queries[6].columns">
+              <th mat-header-cell *matHeaderCellDef>{{col}}</th>
+              <td mat-cell *matCellDef="let element;">{{element[col]}}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="queries[6].columns"></tr>
+            <tr mat-row *matRowDef="let row; columns: queries[6].columns;"></tr>
+
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">Datos sin seleccionar </td>
+            </tr>
+          </table>
+        </div>
+
+        <div style="width: 80%;">
+          <canvas
+            baseChart
+            [data]="queries[6].cd"
+            [options]="barChartOptions"
+            [type]="barChartType"
+          >
+          </canvas>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </mat-tab>
+
+  <mat-tab label="Eighth">
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{queries[7].title}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+        <div class="data_table">
+          <table mat-table [dataSource]="queries[7].datas" color="primary">
+            <ng-container [matColumnDef]="col" *ngFor="let col of queries[7].columns">
+              <th mat-header-cell *matHeaderCellDef>{{col}}</th>
+              <td mat-cell *matCellDef="let element;">{{element[col]}}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="queries[7].columns"></tr>
+            <tr mat-row *matRowDef="let row; columns: queries[7].columns;"></tr>
+
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">Datos sin seleccionar </td>
+            </tr>
+          </table>
+        </div>
+
+        <div style="width: 80%;">
+          <canvas
+            baseChart
+            [data]="queries[7].cd"
+            [options]="barChartOptions"
+            [type]="barChartType"
+          >
+          </canvas>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </mat-tab>
+
+  <mat-tab label="Ninth">
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{queries[8].title}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+        <div class="data_table">
+          <table mat-table [dataSource]="queries[8].datas" color="primary">
+            <ng-container [matColumnDef]="col" *ngFor="let col of queries[8].columns">
+              <th mat-header-cell *matHeaderCellDef>{{col}}</th>
+              <td mat-cell *matCellDef="let element;">{{element[col]}}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="queries[8].columns"></tr>
+            <tr mat-row *matRowDef="let row; columns: queries[8].columns;"></tr>
+
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">Datos sin seleccionar </td>
+            </tr>
+          </table>
+        </div>
+
+        <div style="width: 50%;">
+          <canvas
+          baseChart
+          [data]="queries[8].cd"
+          [type]="pieChartType"
+          [options]="pieChartOptions"
+        >
+        </canvas>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </mat-tab>
+
+  <mat-tab label="Tenth">
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{queries[9].title}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+        <div class="data_table">
+          <table mat-table [dataSource]="queries[9].datas" color="primary">
+            <ng-container [matColumnDef]="col" *ngFor="let col of queries[9].columns">
+              <th mat-header-cell *matHeaderCellDef>{{col}}</th>
+              <td mat-cell *matCellDef="let element;">{{element[col]}}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="queries[9].columns"></tr>
+            <tr mat-row *matRowDef="let row; columns: queries[9].columns;"></tr>
+
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">Datos sin seleccionar </td>
+            </tr>
+          </table>
+        </div>
+
+        <div style="width: 80%;">
+          <canvas
+          baseChart
+          [data]="queries[9].cd"
+          [options]="lineChartOptions"
+          [type]="lineChartType"
+          (chartClick)="chartClicked($event)"
+        ></canvas>
+        <button
+        mat-button
+        mat-raised-button
+        color="primary"
+        (click)="changeTenth()"
+      >
+        Change Label
+      </button>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </mat-tab>
+
+</mat-tab-group>

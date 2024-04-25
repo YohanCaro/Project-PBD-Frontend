@@ -9,11 +9,12 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
+
+import { HttpClientModule } from '@angular/common/http';
+
 import { FormsModule } from '@angular/forms';
+import { CommonModule  } from '@angular/common'
 
-import { CdkTableModule } from '@angular/cdk/table';
-
-import { CommonModule } from '@angular/common'
 import { interval } from 'rxjs';
 import { ViewTables } from 'app/models/view-tables';
 
@@ -22,14 +23,14 @@ import { ViewTables } from 'app/models/view-tables';
   standalone: true,
   imports: [
     MatTableModule,
-    CdkTableModule,
-    CommonModule,
-    MatInputModule,
+    MatGridListModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatIconModule,
     FormsModule,
-    MatGridListModule,
-    MatIconModule
+    MatInputModule,
+    CommonModule,
+    HttpClientModule
   ],
   templateUrl: './tables.component.html',
   styleUrl: './tables.component.css'
@@ -50,7 +51,7 @@ export class TablesComponent implements OnInit  {
   }
 
   ngOnInit() {
-    interval(4000).subscribe(x => {
+    interval(2000).subscribe(x => {
       if (this.dataNewFlag) {
         this.dataSource = new MatTableDataSource(this.element);
         this.dataNewFlag = false
@@ -59,13 +60,12 @@ export class TablesComponent implements OnInit  {
   }
 
   getOrders(table:string) {
-    this.ordersService.getTable(table)
-    .then(response => {
-      response.data.schema.fields.forEach((e:any) => {
+    this.ordersService.getTable(table).subscribe(response => {
+      response.schema.fields.forEach((e:any) => {
         this.displayedColumns.push(e.name)
       })
 
-      response.data.data.forEach((e: any)=> {
+      response.data.forEach((e: any)=> {
         this.element.push(e)
       });
     })

@@ -8,6 +8,8 @@ export const environment = {
 
 export const URL_TABLES = 'http://127.0.0.1:5000/data/'
 
+export const URL_QUERIES = 'http://127.0.0.1:5000/query/'
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

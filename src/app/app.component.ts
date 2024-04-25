@@ -11,5 +11,4 @@ export class AppComponent {
   events: string[] = [];
   opened: boolean = true;
 
-  shouldRun = /(^|.)(stackblitz|webcontainer).(io|com)$/.test(window.location.host);
 }

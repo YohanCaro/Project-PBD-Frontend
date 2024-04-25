@@ -1,8 +1,8 @@
 <div class="body">
 
-  <mat-toolbar color="warn">
+  <mat-toolbar color="primary">
     <p><button mat-button class="bt-menu" (click)="sidenav.toggle()">
-      <mat-icon>menu</mat-icon>
+      <mat-icon color="secundary">menu</mat-icon>
     </button></p>
     <span>PBD APP</span>
     <span class="example-spacer"></span>
@@ -13,13 +13,13 @@
                 (closed)="events.push('close!')">
       <mat-nav-list class="list-nav">
         <a mat-list-item routerLink="../home" routerLinkActive="list-item-active">
-          <mat-icon color="warn">home</mat-icon>Inicio</a>
+          <mat-icon color="primary">home</mat-icon>Inicio</a>
         <a mat-list-item routerLink="../tables" >
-          <mat-icon color="warn">tables</mat-icon>Tablas </a>
+          <mat-icon color="primary">tables</mat-icon>Tablas </a>
         <a mat-list-item routerLink="../search" routerLinkActive="list-item-active">
-          <mat-icon color="warn">search</mat-icon>Consultas</a>
-        <a mat-list-item routerLink="../reports" routerLinkActive="list-item-active">
-          <mat-icon color="warn">reports</mat-icon>Reportes</a>
+          <mat-icon color="primary">search</mat-icon>Consultas</a>
+        <a mat-list-item routerLink="../chars-view" routerLinkActive="list-item-active">
+          <mat-icon color="primary">reports</mat-icon>Reportes</a>
       </mat-nav-list>
 
     </mat-sidenav>
