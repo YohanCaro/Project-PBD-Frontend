@@ -12,7 +12,8 @@ const routes: Routes = [
   {path: 'reports', component:ReportsComponent},
   {path: 'search', component:SearchComponent},
   {path: 'tables', component:TablesComponent},
-  {path: 'chars-view', component:CharsViewComponent}
+  {path: 'chars-view', component:CharsViewComponent},
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
 ];
 
 @NgModule({

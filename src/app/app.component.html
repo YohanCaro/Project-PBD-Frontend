@@ -12,13 +12,13 @@
     <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
                 (closed)="events.push('close!')">
       <mat-nav-list class="list-nav">
-        <a mat-list-item routerLink="../home" routerLinkActive="list-item-active">
+        <a mat-list-item  routerLink="../home">
           <mat-icon color="primary">home</mat-icon>Inicio</a>
         <a mat-list-item routerLink="../tables" >
           <mat-icon color="primary">tables</mat-icon>Tablas </a>
-        <a mat-list-item routerLink="../search" routerLinkActive="list-item-active">
+        <a mat-list-item routerLink="../search">
           <mat-icon color="primary">search</mat-icon>Consultas</a>
-        <a mat-list-item routerLink="../chars-view" routerLinkActive="list-item-active">
+        <a mat-list-item routerLink="../chars-view">
           <mat-icon color="primary">reports</mat-icon>Reportes</a>
       </mat-nav-list>
 
