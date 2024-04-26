@@ -174,21 +174,35 @@ export class SearchComponent implements AfterViewInit {
     )
   }
 
-  report(query:string) {
+  reportExcel(query:string) {
     if (this.form.value.dataSearch) {
-      this.ordersService.postReport(this.form.value.dataSearch, query).subscribe(res => {
+      this.ordersService.postReportExcel(this.form.value.dataSearch, query).subscribe(res => {
         const fileName = `report_${Math.random()}.xlsx`
-        this.getExcelFile(res, fileName)
+        this.getFile(res, fileName)
       })
     } else {
-      this.ordersService.getReport('', query).subscribe(res => {
+      this.ordersService.getReportExcel('', query).subscribe(res => {
         const fileName = `report_${Math.random()}.xlsx`
-        this.getExcelFile(res, fileName)
+        this.getFile(res, fileName)
       })
     }
   }
 
-  getExcelFile(response:any, fileName:string) {
+  reportCSV(query:string) {
+    if (this.form.value.dataSearch) {
+      this.ordersService.postReportCSV(this.form.value.dataSearch, query).subscribe(res => {
+        const fileName = `report_${Math.random()}.csv`
+        this.getFile(res, fileName)
+      })
+    } else {
+      this.ordersService.getReportCSV('', query).subscribe(res => {
+        const fileName = `report_${Math.random()}.csv`
+        this.getFile(res, fileName)
+      })
+    }
+  }
+
+  getFile(response:any, fileName:string) {
     const dataType = response.type
     const binaryData = [];
     binaryData.push(response)

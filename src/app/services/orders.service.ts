@@ -31,20 +31,38 @@ export class OrdersService {
     )
   }
 
-  getReport(filter:string, query:string) {
+  getReportExcel(filter:string, query:string) {
     let params = new HttpParams().appendAll({'filter':filter, 'type':'xlsx', 'query':query})
     let headers = new HttpHeaders().set('Content-Type','application/json')
 
-    return this.http.get<any>(environment.urlReport,
+    return this.http.get<any>(environment.urlReportExcel,
       {params, headers, responseType: 'blob' as 'json'}
     )
   }
 
-  postReport(filter:string, query:string) {
+  postReportExcel(filter:string, query:string) {
     let params = new HttpParams().appendAll({'filter':filter, 'type':'xlsx', 'query':query})
     let headers = new HttpHeaders().set('Content-Type','application/json')
 
-    return this.http.post<any>(environment.urlReport, {},
+    return this.http.post<any>(environment.urlReportExcel, {},
+      { params: params, headers, responseType: 'blob' as 'json'}
+    )
+  }
+
+  getReportCSV(filter:string, query:string) {
+    let params = new HttpParams().appendAll({'filter':filter, 'type':'xlsx', 'query':query})
+    let headers = new HttpHeaders().set('Content-Type','application/json')
+
+    return this.http.get<any>(environment.urlReportCsv,
+      {params, headers, responseType: 'blob' as 'json'}
+    )
+  }
+
+  postReportCSV(filter:string, query:string) {
+    let params = new HttpParams().appendAll({'filter':filter, 'type':'xlsx', 'query':query})
+    let headers = new HttpHeaders().set('Content-Type','application/json')
+
+    return this.http.post<any>(environment.urlReportCsv, {},
       { params: params, headers, responseType: 'blob' as 'json'}
     )
   }

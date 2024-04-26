@@ -1,0 +1,24 @@
+.example-card,.tables-card,.queries-card,.reports-card  {
+  margin: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h3 {
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+h4 {
+  margin-top: 7px;
+}
+
+p {
+  margin: 10px;
+}
+
+.p-3 {
+  text-align: center;
+}

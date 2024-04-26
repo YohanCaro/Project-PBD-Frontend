@@ -11,8 +11,8 @@
       </mat-card-title-group>
       <mat-card-actions>
         <form [formGroup]="form" (ngSubmit)="onFilter(query.code)">
-          <mat-form-field color="warn">
-            <input formControlName="dataSearch" matInput placeholder="Busq" #input>
+          <mat-form-field color="primary">
+            <input formControlName="dataSearch" matInput placeholder="Busqueda" #input>
           </mat-form-field>
             <button type="submit" mat-button color="primary" aria-hidden="false">Filtrar</button>
       </form>
@@ -44,8 +44,8 @@
 
     <mat-card-footer>
       <mat-card-actions>
-        <button mat-button color="primary" aria-hidden="false" (click)="report(query.code)">Export as Excel</button>
-        <button mat-button color="primary" aria-hidden="false">Export as CSV</button>
+        <button mat-button color="primary" aria-hidden="false" (click)="reportExcel(query.code)">Exportar como Excel</button>
+        <button mat-button color="primary" aria-hidden="false" (click)="reportCSV(query.code)">Exportar como CSV</button>
       </mat-card-actions>
     </mat-card-footer>
   </mat-card>
