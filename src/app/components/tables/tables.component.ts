@@ -47,7 +47,6 @@ export class TablesComponent implements OnInit  {
 
   constructor(private ordersService: OrdersService) {
     this.dataSource = new MatTableDataSource();
-    console.log('loading')
   }
 
   ngOnInit() {
@@ -76,7 +75,6 @@ export class TablesComponent implements OnInit  {
     this.element = []
     this.displayedColumns = []
 
-    console.log('Search: ' + this.selectedValue)
     this.getOrders(this.selectedValue)
   }
 

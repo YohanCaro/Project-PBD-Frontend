@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  urlTable:'http://127.0.0.1:5000/data/',
+  urlQueries:'http://127.0.0.1:5000/query/'
 };

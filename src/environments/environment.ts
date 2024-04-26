@@ -3,12 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  urlTable:'http://127.0.0.1:5000/data/',
+  urlQueries:'http://127.0.0.1:5000/query/'
 };
-
-export const URL_TABLES = 'http://127.0.0.1:5000/data/'
-
-export const URL_QUERIES = 'http://127.0.0.1:5000/query/'
 
 /*
  * For easier debugging in development mode, you can import the following file

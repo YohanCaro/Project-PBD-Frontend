@@ -123,7 +123,6 @@ export class SearchComponent implements AfterViewInit {
           this.queries.sort((a:any,b:any) => {return a.index - b.index})
           cols = []
           eles = []
-          console.log(this.queries)
         })
     })
     this.dataSource.paginator = this.paginator;
@@ -133,8 +132,6 @@ export class SearchComponent implements AfterViewInit {
     if (this.form.value.dataSearch) {
       this.postOrders(title, this.form.value.dataSearch)
       .subscribe(e => {
-        console.log(title)
-        console.log(e)
           this.queries.map(function(data) {
               if (data.code == title) {
                 data.datas = e.data
@@ -146,8 +143,6 @@ export class SearchComponent implements AfterViewInit {
     } else {
       this.getOrders(title)
       .subscribe(e => {
-        console.log(title)
-        console.log(e)
           this.queries.map(function(data) {
               if (data.code == title) {
                 data.datas = e.data
