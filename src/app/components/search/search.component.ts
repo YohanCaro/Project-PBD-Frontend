@@ -174,4 +174,31 @@ export class SearchComponent implements AfterViewInit {
     )
   }
 
+  report(query:string) {
+    if (this.form.value.dataSearch) {
+      this.ordersService.postReport(this.form.value.dataSearch, query).subscribe(res => {
+        const fileName = `report_${Math.random()}.xlsx`
+        this.getExcelFile(res, fileName)
+      })
+    } else {
+      this.ordersService.getReport('', query).subscribe(res => {
+        const fileName = `report_${Math.random()}.xlsx`
+        this.getExcelFile(res, fileName)
+      })
+    }
+  }
+
+  getExcelFile(response:any, fileName:string) {
+    const dataType = response.type
+    const binaryData = [];
+    binaryData.push(response)
+
+    const filePath = window.URL.createObjectURL(new Blob(binaryData, {type:dataType}))
+    const downloadLink = document.createElement('a')
+    downloadLink.href = filePath
+    downloadLink.setAttribute('download', fileName)
+    document.body.appendChild(downloadLink)
+    downloadLink.click()
+  }
+
 }
